@@ -24,6 +24,7 @@ def do_pack():
             return None
     return files
 
+
 def do_deploy(archive_path):
     """Creates and distributes an archive to your web servers"""
 
@@ -63,6 +64,7 @@ def do_deploy(archive_path):
     print("New version deployed!")
 
     return True
+
 
 def deploy():
     """Creates and distributes an archive to your web servers"""
