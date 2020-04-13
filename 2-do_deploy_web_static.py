@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 """Script that distributes an archive to your web servers"""
-from fabric.api import *
-from fabric.operations import run, put, sudo
-import os
+
+from fabric.api import put, run, env
+from os.path import exists
 env.hosts = ['35.190.142.12', '34.229.218.28']
 
 
 def do_deploy(archive_path):
     """Script that distributes an archive to your web servers"""
-    if os.path.isfile(archive_path) is False:
+    if exists(archive_path) is False:
         return False
-
     try:
         files = archive_path.split("/")[-1]
         directory = files.split(".")[0]
