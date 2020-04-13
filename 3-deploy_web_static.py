@@ -8,22 +8,25 @@ env.hosts = ['35.190.142.12', '34.229.218.28']
 
 
 def do_pack():
-        actual = datetime.utcnow()
-        files = "versions/web_static_{}{}{}{}{}{}.tgz".format(actual.year,
-                                                              actual.month,
-                                                              actual.day,
-                                                              actual.hour,
-                                                              actual.minute,
-                                                              actual.second)
+    """Creates and distributes an archive to your web servers"""
 
-        if not path.isdir("versions"):
-                if local("mkdir -p versions").failed:
-                        return None
-        if local('tar -cvzf {} web_static'.format(files)).failed:
-                return None
-        return files
+    actual = datetime.utcnow()
+    files = "versions/web_static_{}{}{}{}{}{}.tgz".format(actual.year,
+                                                          actual.month,
+                                                          actual.day,
+                                                          actual.hour,
+                                                          actual.minute,
+                                                          actual.second)
+    if not path.isdir("versions"):
+            if local("mkdir -p versions").failed:
+                    return None
+    if local('tar -cvzf {} web_static'.format(files)).failed:
+            return None
+    return files
 
 def do_deploy(archive_path):
+    """Creates and distributes an archive to your web servers"""
+
     if not path.isfile(archive_path):
             return False
     files = archive_path.split("/")[-1]
@@ -62,6 +65,8 @@ def do_deploy(archive_path):
     return True
 
 def deploy():
+    """Creates and distributes an archive to your web servers"""
+
     archive_path = do_pack()
     if not archive_path:
         return False
