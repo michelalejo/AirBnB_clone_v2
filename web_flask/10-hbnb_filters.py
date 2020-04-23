@@ -50,5 +50,13 @@ def states_id(id):
             break
     return render_template('9-states.html', states=states, flag=flag)
 
+
+@app.route('/hbnb_filters', strict_slashes=False)
+def filters():
+    """Display a HTML page AirBnB"""
+    states = storage.all(State).values()
+    am = storage.all(Amenity).values()
+    return render_template('10-hbnb_filters.html', states=states, amenities=am)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
