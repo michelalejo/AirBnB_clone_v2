@@ -27,7 +27,7 @@ def c_variable_text(text):
 
 
 @app.route('/python', strict_slashes=False)
-@app.route('/python/<text>')
+@app.route('/python/<text>', strict_slashes=False)
 def python_variable_text(text='is_cool'):
     """Python with some variable content."""
     text = text.replace('_', ' ')
