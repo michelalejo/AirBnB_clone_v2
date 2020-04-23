@@ -26,8 +26,9 @@ def c_variable_text(text):
     return 'C {}'.format(text)
 
 
+@app.route('/python')
 @app.route('/python/<text>')
-def python_variable_text(text):
+def python_variable_text(text='is cool'):
     """Python with some variable content."""
     text = text.replace('_', ' ')
     return 'Python {}'.format(text)
