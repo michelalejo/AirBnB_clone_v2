@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """This is the state class"""
-import os
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
+from models.city import City
+import models
+import os
 
 
 class State(BaseModel, Base):
