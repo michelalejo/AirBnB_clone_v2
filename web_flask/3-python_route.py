@@ -19,16 +19,16 @@ def hbnb():
     return 'HBNB'
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c_variable_text(text):
     """C with some variable content."""
     text = text.replace('_', ' ')
     return 'C {}'.format(text)
 
 
-@app.route('/python')
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>')
-def python_variable_text(text='is cool'):
+def python_variable_text(text='is_cool'):
     """Python with some variable content."""
     text = text.replace('_', ' ')
     return 'Python {}'.format(text)
