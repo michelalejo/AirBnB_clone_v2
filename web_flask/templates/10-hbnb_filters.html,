@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<HTML lang="en">
-<HEAD>
-    <TITLE>HBNB</TITLE>
-</HEAD>
-<BODY>
-    {% if flag %}
-    <H1>State: {{ states.name }}</H1>
-    <H3>Cities:</H3>
-    <UL>
-        {% for city in states.cities|sort(attribute='name') %}
-        <LI>{{ city.id }}: <B>{{ city.name }}</B></LI>
-        {% endfor %}
-    </UL>
-    {% else %}
-    <H1>Not found!</H1>
-    {% endif %}
-</BODY>
-</HTML>
+<html lang="en">
+
+<head>
+	<title> AirBnB Clone</title>
+	<link rel="icon" type="image/webp" href="images/icon.png">
+	<meta charset="utf-8">
+	<link href="styles/4-common.css" rel="stylesheet">
+	<link href="styles/3-footer.css" rel="stylesheet">
+	<link href="styles/3-header.css" rel="stylesheet">
+	<link href="styles/6-filters.css" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<div class="log">
+		</div>
+	</header>
+	<div class="container">
+		<section class="filters">
+			<button>
+				Search
+			</button>
+
+			<div class="locations">
+				<h3 class="title">States</h3>
+				<h4 class="subtitle">California, Arizona...</h4>
+				<div class="popover">
+					<ul>
+						<li>
+							<h2>Arizona:</h2>		
+							<ul>
+								<li>Page</li>
+								<li>Page2</li>
+							</ul>	
+						</li>
+						<li>
+							<h2>California:</h2>		
+							<ul>
+								<li>San Francisco</li>
+								<li>Los Altos</li>
+							</ul>	
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="amenities">
+				<h3 class="title">Amenities</h3>
+				<h4 class="subtitle">Internet, Kitchen...</h4>
+				<div class="popover">
+					<ul>
+						<li>Internet</li>
+						<li>TV/li>
+						<li>Kitchen</li>
+						<li>Iron</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<footer>  
+		<p>Holberton School</p>
+	</footer>
+
+</body>
+
+</html>
