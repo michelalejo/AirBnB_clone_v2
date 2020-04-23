@@ -19,7 +19,7 @@ def hbnb():
     return 'HBNB'
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c_variable_text(text):
     """C with some variable content."""
     text = text.replace('_', ' ')
