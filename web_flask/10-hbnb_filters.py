@@ -57,7 +57,7 @@ def filters():
     """Display a HTML page AirBnB"""
     states = storage.all(State).values()
     am = storage.all(Amenity).values()
-    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
+    return render_template('10-hbnb_filters.html', states=states, amenities=am)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
